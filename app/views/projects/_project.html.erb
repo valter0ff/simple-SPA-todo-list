@@ -1,5 +1,4 @@
-<div id="<%=dom_id(project)%>">
-  <ul class="shadow list-group mb-5">
+  <ul class="shadow list-group mb-5" id="<%=dom_id(project)%>">
   <li class="d-flex list-group-item p-0 blue-gradient">
     <div class="m-2 pt-2">
       <a href="#" class="px-2">
@@ -37,31 +36,10 @@
     <% end %>
     
     <% project.tasks.each do |task| %>
-      <li class="list-group-item p-0">
-        <div class="d-flex">
-          <div class="border-right p-3 text-center">
-            <input type="checkbox">
-          </div>
-          <div class="border-right flex-grow-1 p-3">
-            <span><%=task.title%></span>    
-          </div>
-          <div class="px-2 py-3 text-center">
-             <a href="#" class="px-2">
-             <i class="fa fa-unsorted" style="font-size:16px;color:#747474;"></i>
-            </a>
-            <span>|</span>
-            <%= link_to edit_project_task_path(project,task), class:"px-2" do %>
-              <i class="fa fa-pencil" style="font-size:16px;color:#747474;"></i>
-            <% end %>
-            <span>|</span>
-            <%= link_to project_task_path(project,task), method: :delete, data: { remote: true, confirm: 'Are you sure?'}, class: "delete-task px-2" do %>
-              <i class="fa fa-trash" style="font-size:16px;color:#747474;"></i>
-            <% end %>
-          </div>
-        </div>
-      </li>
+      <%= render partial: 'tasks/task', locals: { project: project, task: task} %>
     <% end %>
+           
   <% end %>
 
 </ul>
-</div>
+

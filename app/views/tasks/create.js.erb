@@ -1,1 +1,1 @@
-$('table#projects tbody').append("<%= j render 'project', project: @project %>");
+$('ul#<%=dom_id(@project)%>').append("<%= j render 'tasks/task', project: @project, task: @task %>");

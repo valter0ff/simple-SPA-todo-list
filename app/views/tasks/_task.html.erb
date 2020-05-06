@@ -1,0 +1,24 @@
+<li class="list-group-item p-0" id="<%=dom_id(task)%>">
+        <div class="d-flex">
+          <div class="border-right p-3 text-center">
+            <input type="checkbox">
+          </div>
+          <div class="border-right flex-grow-1 p-3">
+            <span><%=task.title%></span>    
+          </div>
+          <div class="px-2 py-3 text-center">
+             <a href="#" class="px-2">
+             <i class="fa fa-unsorted" style="font-size:16px;color:#747474;"></i>
+            </a>
+            <span>|</span>
+            <%= link_to edit_project_task_path(project,task), class:"px-2" do %>
+              <i class="fa fa-pencil" style="font-size:16px;color:#747474;"></i>
+            <% end %>
+            <span>|</span>
+            <%= link_to project_task_path(project,task), method: :delete, data: { remote: true, confirm: 'Are you sure?'}, class: "delete-task px-2" do %>
+              <i class="fa fa-trash" style="font-size:16px;color:#747474;"></i>
+               <% end %>
+          </div>
+        </div>
+      </li>
+  
