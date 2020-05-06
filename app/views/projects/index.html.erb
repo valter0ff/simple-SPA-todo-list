@@ -1,35 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
+	<div class="text-center mb-5">
+	  <h2>SIMPLE TODO LISTS</h2>
+	  <h5>FROM VALTER0FF FOR RUBYGARAGE</h5>
+	</div>
+  <% @projects.each do |project| %>
+			<%= render partial: 'project', locals: { project: project} %>
+  <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="d-flex justify-content-center" id="new-project">
+	<%= link_to new_project_path, remote:true, class:"btn m-4 p-2  font-weight-bold border-top 	border-secondary blue-gradient shadow"  do %>
+		<i class="fa fa-plus px-1fa-white-shadow fa-dark-style"></i>
+		<span class="mx-2 text-white text-dark-shadow" >Add TODO List</span>
+	<%end%>
+</div>
 
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { remote: true, confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'New Task', new_project_task_path(project) %></td>
-      </tr>
-			<% project.tasks.each do |task| %>
-				<tr>
-					<td> <%=task.title%></td>
-					<td><%= link_to 'Edit', edit_project_task_path(project,task) %></td>
-					<td><%= link_to 'Destroy', project_task_path(project,task), method: :delete, data: { remote: true, confirm: 'Are you sure?' } %></td>
-				 </tr>
-       <% end %>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Project', new_project_path %>

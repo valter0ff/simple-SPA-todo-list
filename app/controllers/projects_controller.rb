@@ -5,11 +5,15 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
+    @task = Task.new
   end
 
   # GET /projects/new
   def new
     @project = Project.new
+    respond_to do |format|
+			format.js
+    end
   end
 
   # GET /projects/1/edit
@@ -20,9 +24,10 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
-
+		@task = Task.new
     respond_to do |format|
       if @project.save
+      	format.js
         format.html { redirect_to root_path, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
@@ -37,6 +42,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
+				format.js
         format.html { redirect_to root_path, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
       else
@@ -51,6 +57,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
+			format.js
       format.html { redirect_to root_url, notice: 'Project was successfully destroyed.' }
       format.json { head :no_content }
     end
