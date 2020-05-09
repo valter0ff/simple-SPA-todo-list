@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-	 before_action :set_project, only: [:new, :create]
+	 before_action :set_project, only: [:new, :create, :edit, :update]
 
   # GET /tasks
   # GET /tasks.json
@@ -44,8 +44,10 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
+        format.js 
         format.html { redirect_to root_path, notice: 'Task was successfully updated.' }
         format.json { render :show, status: :ok, location: @task }
+        
       else
         format.html { render :edit }
         format.json { render json: @task.errors, status: :unprocessable_entity }

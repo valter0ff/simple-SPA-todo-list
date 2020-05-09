@@ -1,4 +1,4 @@
-  <ul class="shadow list-group mb-5" id="<%=dom_id(project)%>">
+  <ul class="shadow list-group mb-5 border-bottom border-secondary rounded-bottom rounded-lg" id="<%=dom_id(project)%>">
   <li class="d-flex list-group-item p-0 blue-gradient">
     <div class="m-2 pt-2">
       <a href="#" class="px-2">
@@ -8,7 +8,7 @@
     <div class="flex-grow-1 p-3 text-white font-weight-bold text-dark-shadow ">
       <span> <%= project.title %> </span>
     </div>
-    <div class="p-3">
+    <div class="p-3 fa-buttons">
       <%= link_to edit_project_path(project), class:"px-2" do %>
         <i class="fa fa-pencil text-dark-shadow fa-heading-style"></i>
       <% end %>
@@ -20,7 +20,7 @@
   </li>
 
   <% if project %>
-      <%= form_with model: [project,@task] do |task| %>
+      <%= form_with model: [project,@task], id: "new_task_form" do |task| %>
         <li class="d-flex list-group-item light p-0 light-grey new-task rounded-0" >
           <div class="m-2 pt-1">
             <a href="#" class="px-2"><i class="fa fa-plus fa-green-style" ></i></a>

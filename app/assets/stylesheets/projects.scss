@@ -39,3 +39,15 @@
 .light-grey {
 	background-color:#CFCFCF;
 }
+
+.fa-buttons {
+	visibility: hidden;
+}
+ 
+li[id*="task"]:hover{
+	background-color: #FCFED5;
+}
+
+li:hover div.fa-buttons {
+	visibility: visible;
+}

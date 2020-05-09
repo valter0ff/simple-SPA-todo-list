@@ -1,0 +1,2 @@
+$('li#<%=dom_id(@task)%>').html("<%= j render "tasks/edit_task", project:@project ,task:@task %>");
+$('li#<%=dom_id(@task)%> i.fa-plus').removeClass('fa-plus').addClass('fa-pencil-square-o');
