@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
-	 before_action :set_project, only: [:new, :create, :edit, :update]
+  before_action :set_task, only: [:show, :edit, :update, :destroy, :toggle]
+	 before_action :set_project, only: [:new, :create, :edit, :update, :toggle]
 
   # GET /tasks
   # GET /tasks.json
@@ -10,7 +10,8 @@ class TasksController < ApplicationController
 
   # GET /tasks/1
   # GET /tasks/1.json
-  def show
+  def toggle
+    @task.toggle_completed!
   end
 
   # GET /tasks/new

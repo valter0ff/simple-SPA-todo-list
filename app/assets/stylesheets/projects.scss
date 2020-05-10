@@ -40,6 +40,10 @@
 	background-color:#CFCFCF;
 }
 
+.light-blue{
+	background-color:#dde4ee;
+}
+
 .fa-buttons {
 	visibility: hidden;
 }
@@ -50,4 +54,13 @@ li[id*="task"]:hover{
 
 li:hover div.fa-buttons {
 	visibility: visible;
+}
+
+
+.text-decor-line {
+	text-decoration: line-through
+}
+
+.width-7em {
+	width: 7.5em;
 }
