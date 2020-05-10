@@ -4,13 +4,13 @@
     <title>Rubygarage</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=1, user-scalable=yes, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=1, user-scalable=yes, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="container">
+    <div class="container w-md-75">
       <%= yield %>
     </div>
   </body>

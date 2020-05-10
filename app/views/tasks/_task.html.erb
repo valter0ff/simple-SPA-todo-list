@@ -1,15 +1,15 @@
 <li class="list-group-item p-0 <%= "light-blue" if task.completed? %>" id="<%=dom_id(task)%>">  
-  <div class="d-flex">
+  <div class="row mx-0">
 
-    <div class="border-right p-3 text-center">
+    <div class="col-auto border-right p-3 text-center">
 	    <%= check_box_tag dom_id(task,"checkbox"), 1, task.completed?, data: { remote: true, url: toggle_project_task_path(project, task), method: :post } %>
 	  </div>
 
-		<div class="border-right flex-grow-1 p-3 <%= "text-decor-line" if task.completed? %>">
+		<div class="border-right col p-3 <%= "text-decor-line" if task.completed? %>">
 			<span><%=task.title%></span>    
 		</div>
 
-			<div class="px-2 py-3 text-center width-7em ">
+			<div class="px-1 py-3 text-center col-auto">
 				
 		    <div class="fa-buttons <%= "d-none" if task.completed? %>">
 		      <a href="#" class="px-2">
