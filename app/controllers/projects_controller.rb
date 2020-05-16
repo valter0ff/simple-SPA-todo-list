@@ -11,13 +11,12 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
-    respond_to do |format|
-			format.js
-    end
+    respond_to {|format| format.js}
   end
 
   # GET /projects/1/edit
   def edit
+		respond_to {|format| format.js}
   end
 
   # POST /projects
@@ -33,6 +32,7 @@ class ProjectsController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @project.errors, status: :unprocessable_entity }
+        format.js { render 'new' }
       end
     end
   end
@@ -48,6 +48,7 @@ class ProjectsController < ApplicationController
       else
         format.html { render :edit }
         format.json { render json: @project.errors, status: :unprocessable_entity }
+        format.js { render 'edit' }
       end
     end
   end

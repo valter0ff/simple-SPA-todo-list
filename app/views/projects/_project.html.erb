@@ -10,7 +10,7 @@
         <span> <%= project.title %> </span>
       </div>
       <div class="p-3 fa-buttons col-auto">
-        <%= link_to edit_project_path(project), class:"px-2" do %>
+        <%= link_to edit_project_path(project), data: { remote:true, toggle: 'modal' }, class:"px-2" do %>
           <i class="fa fa-pencil text-dark-shadow fa-heading-style"></i>
         <% end %>
         <span class="fa-heading-style">|</span>
