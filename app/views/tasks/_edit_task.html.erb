@@ -1,12 +1,12 @@
       <%= form_with model: [project,task], method: :put do |form| %>
-        <li class="d-flex list-group-item light p-0 light-grey new-task rounded-0" id="<%=dom_id(task)%>">
-          <div class="m-2 pt-1">
-            <a href="#" class="px-2"><i class="fa fa-plus fa-green-style" ></i></a>
+        <li class="d-flex list-group-item light p-0 light-grey new-task border-0" id="<%=dom_id(task)%>">
+          <div class="m-1 pt-2 px-1">
+            <a href="#" ><i class="fa fa-plus fa-green-style" ></i></a>
           </div>
           <div class=" input-group ">
             <%= form.text_field :title, class:"form-control my-2 border-left-0 border-bottom-0 border-secondary"%>
               <div class="input-group-append">
-                  <%= form.submit "Edit task", class:"btn my-2 mr-2 px-4 text-white font-weight-bold border-top border-secondary green-gradient text-dark-shadow" %>
+                  <%= form.submit "Edit task", class:"btn my-2 mr-2 px-3 text-white font-weight-bold border-top border-secondary green-gradient text-dark-shadow" %>
        
               </div>
           </div>

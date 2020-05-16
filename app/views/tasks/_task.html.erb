@@ -1,4 +1,4 @@
-<li class="list-group-item p-0 <%= "light-blue" if task.completed? %>" id="<%=dom_id(task)%>">  
+
   <div class="row mx-0">
 
     <div class="col-auto border-right p-3 text-center">
@@ -9,9 +9,8 @@
 			<span><%=task.title%></span>    
 		</div>
 
-			<div class="px-1 py-3 text-center col-auto">
 				
-		    <div class="fa-buttons <%= "d-none" if task.completed? %>">
+		    <div class="px-1 py-3 text-center col-auto fa-buttons <%= "d-none" if task.completed? %>">
 		      <a href="#" class="px-2">
 		        <i class="fa fa-unsorted" style="font-size:16px;color:#747474;"></i>
 		      </a>
@@ -28,7 +27,6 @@
 		        <i class="fa fa-trash" style="font-size:16px;color:#747474;"></i>
 		      <% end %>
 				</div>
-			</div>
 		</div>
-</li>
+
   
