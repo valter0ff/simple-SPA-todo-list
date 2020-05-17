@@ -1,10 +1,8 @@
-<div class="modal-header">
-  <h5 class="modal-title" id="exampleModalLabel">Post!</h5>
-  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-  </button>
+<div class="modal-header blue-gradient">
+  <h5 class="modal-title text-white font-weight-bold text-dark-shadow" id="exampleModalLabel"></h5>
+  <button type="button" class="close text-dark-shadow fa-heading-style" data-dismiss="modal" aria-label="Close" aria-hidden="true">×</button>
  </div>
-<div class="modal-body">
+<div class="modal-body light-grey">
   <%= form_with(model: project) do |form| %>
     <% if project.errors.any? %>
       <div id="error_explanation">
@@ -18,18 +16,15 @@
       </div>
     <% end %>
   
-    <div class="field">
-      <%= form.label :title %>
-      <%= form.text_field :title %>
+    <div class="field d-flex ">
+       <%= form.text_field :title, class:"form-control border-left-0 border-bottom-0 border-secondary" %>
     </div>
-  
-    <div class="actions">
-      <%= form.submit %>
+    <div class="d-flex actions justify-content-center">
+      <%= form.submit class:"btn mt-3 px-3 text-white font-weight-bold border-top  border-secondary green-gradient text-dark-shadow" %>
     </div>
-  <% end %>
+   <% end %> 
 </div>
-<div class="modal-footer">
-</div>
+
 
 
 
