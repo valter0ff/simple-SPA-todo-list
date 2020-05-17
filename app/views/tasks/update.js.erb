@@ -1,1 +1,1 @@
-$('li#<%=dom_id(@task)%>').html("<%= j render "tasks/task", project:@project ,task:@task %>");
+$('li#<%=dom_id(@task)%>').replaceWith("<%= j render "tasks/task", project:@project ,task:@task %>");
