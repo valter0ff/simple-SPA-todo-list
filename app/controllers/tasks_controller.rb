@@ -36,6 +36,7 @@ class TasksController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @task.errors, status: :unprocessable_entity }
+        format.js {render :edit}
       end
     end
   end
@@ -52,6 +53,7 @@ class TasksController < ApplicationController
       else
         format.html { render :edit }
         format.json { render json: @task.errors, status: :unprocessable_entity }
+        format.js {render :edit}
       end
     end
   end
