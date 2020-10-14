@@ -7,6 +7,7 @@ gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 gem 'mini_racer'
 gem "font-awesome-rails"
+gem 'flatpickr'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'

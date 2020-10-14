@@ -1,10 +1,12 @@
   <ul class="shadow list-group mb-5 border-bottom border-secondary rounded-bottom rounded-lg" id="<%=dom_id(project)%>">
   <li class="list-group-item p-0 blue-gradient">
     <div class="row mx-0">
-      <div class="col-auto m-1 px-2 pt-2">
-        <a href="#" >
+      <div class="col-auto m-1 px-2 pt-2 flatpickr">
+        <input class="test-pickr" data-input></input>
+        <a class="input-button" data-toggle>
           <i class="fa fa-calendar fa-white-shadow fa-dark-style" ></i>
         </a>
+        
       </div>
       <div class="col p-3 text-white font-weight-bold text-dark-shadow ">
         <span> <%= project.title %> </span>
