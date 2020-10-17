@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
-		respond_to {|format| format.js}
+	#	respond_to {|format| format.js}
   end
 
   # POST /projects
@@ -72,6 +72,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:title)
+      params.require(:project).permit(:title, :deadline)
     end
 end

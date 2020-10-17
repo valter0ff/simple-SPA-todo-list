@@ -4,14 +4,16 @@
 
  $(document).ready(function(){
   $(".flatpickr").flatpickr({
-		wrap: true
+		minDate: "today",
+		wrap: true,
+		onChange: function(selectedDates, dateStr, instance) {
+			input = instance.input;
+			form = input.parentElement;
+			form.dispatchEvent(new Event('submit', {bubbles: true}));
+    }
 	});
  });
 
-//document.addEventListener('DOMContentLoaded', function() {
-//  flatpickr('.flatpickr', {
-//		wrap: true
-//	});
-//})
+
 	
 

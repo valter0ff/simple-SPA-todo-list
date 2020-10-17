@@ -1,2 +1,5 @@
 $("#modal-window").modal('hide');
 $('ul#<%=dom_id(@project)%>').find('span:first').text("<%= @project.title %>");
+$('ul#<%=dom_id(@project)%>').find("div.flatpickr a.input-button")
+	.attr("title", "<%= @project.deadline.strftime("Deadline is: %B %d, %Y") %>");
+
