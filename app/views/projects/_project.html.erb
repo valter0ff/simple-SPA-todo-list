@@ -4,7 +4,7 @@
       <div class="col-auto m-1 px-2 pt-2 flatpickr">
         <%= form_with model: project, class: "test-pickr" do |form| %>
           <%= form.text_field :deadline, class: "d-none",data: {input: ""} %>
-          <a class="input-button" title="<%= project.deadline.strftime("Deadline is: %B %d, %Y") if project.deadline%>" data-toggle>
+          <a class="input-button" title="<%= project.deadline ? project.deadline.strftime("Deadline is: %B %d, %Y") : "Set deadline" %>" data-toggle>
             <i class="fa fa-calendar fa-white-shadow fa-dark-style" ></i>
           </a>
         <% end %>
