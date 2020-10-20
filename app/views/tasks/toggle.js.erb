@@ -1,15 +1,15 @@
 <% if @task.completed? %>
 
-	$('#<%= dom_id(@task,"checkbox") %>').parent().next().addClass("text-decor-line")
+	$('#<%=dom_id(@task)%> div.task-text').addClass("text-decor-line")
 		.next().addClass("d-none");
 		
-	$('li#<%=dom_id(@task)%>').addClass("light-blue");
+	$('#<%=dom_id(@task)%>').parent().addClass("light-blue");
 	
 <% else %>
 
-	$('#<%= dom_id(@task,"checkbox") %>').parent().next().removeClass("text-decor-line")
+	$('#<%=dom_id(@task)%> div.task-text').removeClass("text-decor-line")
 	.next().removeClass("d-none");
 	
-	$('li#<%= dom_id(@task)%>').removeClass("light-blue");
+	$('#<%=dom_id(@task)%>').parent().removeClass("light-blue");
 	
 <% end %>
