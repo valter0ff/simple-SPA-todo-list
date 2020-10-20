@@ -18,5 +18,8 @@
 //= require bootstrap-sprockets
 //= require_tree .
 //= require flatpickr
+//= require jquery_ujs
+//= require jquery-ui/widgets/sortable
+//= require rails_sortable
 
 

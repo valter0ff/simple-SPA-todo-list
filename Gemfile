@@ -8,6 +8,8 @@ gem 'jquery-rails'
 gem 'mini_racer'
 gem "font-awesome-rails"
 gem 'flatpickr'
+gem 'jquery-ui-rails'
+gem 'rails_sortable'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'

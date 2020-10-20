@@ -1,4 +1,4 @@
-<li class="list-group-item p-0 <%= "light-blue" if task.completed? %>" id="<%=dom_id(task)%>">  
+<li class="list-group-item p-0 <%= "light-blue" if task.completed? %>" id="<%=task.sortable_id%>">  
   <div class="row mx-0">
 
     <div class="col-auto border-right p-3 text-center">
