@@ -1,2 +1,2 @@
-$('li#<%=@task.sortable_id%>').replaceWith("<%= j render "tasks/task", project:@project ,task:@task %>");
+$('#<%=dom_id(@task)%>').parent().replaceWith("<%= j render "tasks/task", project:@project ,task:@task %>");
 railsSort();
