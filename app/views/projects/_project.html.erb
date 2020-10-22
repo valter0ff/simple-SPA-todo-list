@@ -10,7 +10,7 @@
         <% end %>
       </div>
       <div class="col p-3 text-white font-weight-bold text-dark-shadow ">
-        <span> <%= project.title %> </span>
+        <span class="project-title"> <%= project.title %> </span>
       </div>
       <div class="p-3 fa-buttons col-auto">
         <%= link_to edit_project_path(project), data: { remote:true, toggle: 'modal' }, class:"px-2" do %>
