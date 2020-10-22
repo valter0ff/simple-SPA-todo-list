@@ -1,7 +1,7 @@
-<li class="list-group-item p-0 <%= "light-blue" if task.completed? %>" id="<%=task.sortable_id%>">  
-  <div class="row mx-0" id="<%=dom_id(task)%>">
+<li class="list-group-item p-0" id="<%=task.sortable_id%>">  
+  <div class="row mx-0 <%= "light-blue" if task.completed? %>" id="<%=dom_id(task)%>">
 
-    <div class="col-auto border-right p-3 text-center">
+    <div class="col-auto border-right-red p-3 text-center">
 	    <%= check_box_tag "", 1, task.completed?, data: { remote: true, url: toggle_project_task_path(project, task), method: :post } %>
 	  </div>
 

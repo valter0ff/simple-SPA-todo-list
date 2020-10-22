@@ -48,7 +48,7 @@
 	visibility: hidden;
 }
  
-li[id*="task"]:hover:not(.light-blue){
+li div[id^="task_"]:hover:not(.light-blue){
 	background-color: #FCFED5;
 }
 
@@ -65,5 +65,15 @@ li:hover div.fa-buttons {
 	width: 7.5em;
 }
 
+.rounded-bottom {
+	border-bottom-right-radius: 1rem !important;
+	border-bottom-left-radius: 1rem !important;
+}
 
+.border-right-red {
+	border-right: 1px solid #eaaebf;
+}
 
+.list-group-item {
+	border: 1px solid rgba(0, 0, 0, 0.21);
+}

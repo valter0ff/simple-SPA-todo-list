@@ -1,3 +1,4 @@
 $('ul#<%=dom_id(@project)%> div.sortable').prepend("<%= j render 'tasks/task', project: @project, task: @task %>");
 $("ul#<%=dom_id(@project)%> #new_task_form")[0].reset();
 railsSort();
+roundEdges();
