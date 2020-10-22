@@ -28,7 +28,7 @@
       <%= form_with model: [project,@task], id: "new_task_form" do |task| %>
         <li class="d-flex list-group-item light p-0 light-grey new-task rounded-0" >
           <div class="m-1 pt-2 px-1">
-            <a href="#"><i class="fa fa-plus fa-green-style" ></i></a>
+            <a><i class="fa fa-plus fa-green-style" ></i></a>
           </div>
           <div class=" input-group ">
             <%= task.text_field :title, placeholder: "Start typing here to create a task..." , class:"form-control my-2 border-left-0 border-bottom-0 border-secondary"%>
