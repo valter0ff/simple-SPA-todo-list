@@ -16,3 +16,13 @@
  @import "projects";
 
  @import "flatpickr";
+
+ .navbar-position {
+		position: inherit;
+		top: 0;
+		z-index: 1030;
+ }
+
+ .navbar-toggler {
+	border: 0rem;
+ }
