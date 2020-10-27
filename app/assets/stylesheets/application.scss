@@ -26,3 +26,11 @@
  .navbar-toggler {
 	border: 0rem;
  }
+
+ .navbar-nav-row {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
