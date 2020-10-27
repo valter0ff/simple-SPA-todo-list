@@ -6,13 +6,18 @@
 function roundEdges(){
 	$("ul>div>li:last-child").addClass("rounded-bottom").children().addClass("rounded-bottom")
 };
+
+function squareEdges(){
+			$("ul>div>li").removeClass("rounded-bottom").children().removeClass("rounded-bottom");
+};
+
 function railsSort(){
 	$('.sortable').railsSortable({
 	  handle: $(".fa-unsorted").parent(),
 		update: function( event, ui ) {
-			$("ul>div>li").removeClass("rounded-bottom").children().removeClass("rounded-bottom");
+			squareEdges();
 			roundEdges();
-			}
+		}
 	});
 	
 };

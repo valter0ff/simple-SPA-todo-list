@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-	has_many :tasks, -> {order "position"}, dependent: :destroy
+	has_many :tasks,-> { order :position}, dependent: :destroy
 	belongs_to :user
 
 	accepts_nested_attributes_for :tasks
