@@ -1,5 +1,8 @@
 <nav class="shadow navbar navbar-position navbar-expand-lg navbar-light blue-gradient rounded-bottom">
   <span class="navbar-text text-white font-weight-bold text-dark-shadow">Simple TODO LISTS for Rubygarage by Valter0ff</span>
+  <% if user_signed_in? %>
+		<span class="navbar-text text-white font-weight-bold text-dark-shadow">Wellcome,<%= current_user.email %></span>
+  <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="fa fa-user-circle-o text-white font-weight-bold text-dark-shadow"></span>
   </button>
@@ -8,7 +11,7 @@
 			<% if user_signed_in? %>
 				<%= link_to "Выход", destroy_user_session_path, method: :delete, class: "nav-link text-white font-weight-bold text-dark-shadow" %>
 			<% else %>
-				<%= link_to "Вход", new_user_session_path, class: "nav-link text-white font-weight-bold text-dark-shadow"%>
+				<%= link_to "Вход", new_user_session_path, class: "nav-link text-white font-weight-bold text-dark-shadow" %>
 				<%= link_to "Регистрация", new_user_registration_path, class: "nav-link text-white font-weight-bold text-dark-shadow" %>
       <% end %>
     </div>

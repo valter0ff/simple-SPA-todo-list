@@ -1,28 +1,29 @@
 class ProjectsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_project, only: [:edit, :update, :destroy]
 
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = current_user.projects
     @task = Task.new
   end
 
   # GET /projects/new
   def new
-    @project = Project.new
+    @project = current_user.projects.new
     respond_to {|format| format.js}
   end
 
   # GET /projects/1/edit
   def edit
-	#	respond_to {|format| format.js}
+    respond_to {|format| format.js}
   end
 
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(project_params)
+    @project = current_user.projects.new(project_params)
 		@task = Task.new
     respond_to do |format|
       if @project.save

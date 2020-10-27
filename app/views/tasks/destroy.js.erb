@@ -1,3 +1,6 @@
-$('.delete-task').on('ajax:success', function() {
-	$('#<%=dom_id(@task)%>').parent().fadeOut();
+$('#<%=dom_id(@task)%>').parent().fadeOut(function(){
+railsSort();
+roundEdges();
 });
+
+
