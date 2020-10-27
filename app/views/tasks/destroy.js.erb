@@ -1,6 +1,5 @@
-$('#<%=dom_id(@task)%>').parent().fadeOut(function(){
-railsSort();
+$('#<%=dom_id(@task)%>').parent().fadeOut().remove();
 roundEdges();
-});
+
 
 
