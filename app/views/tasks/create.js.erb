@@ -1,5 +1,5 @@
 $('ul#<%=dom_id(@project)%> div.sortable').append("<%= j render 'tasks/task', project: @project, task: @task %>");
 $("ul#<%=dom_id(@project)%> #new_task_form")[0].reset();
-$("ul>div>li").removeClass("rounded-bottom").children().removeClass("rounded-bottom");
+squareEdges();
 roundEdges();
 railsSort();

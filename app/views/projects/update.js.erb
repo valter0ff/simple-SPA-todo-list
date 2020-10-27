@@ -1,5 +1,4 @@
 $("#modal-window").modal('hide');
 proj = $('ul#<%=dom_id(@project)%>');
 proj.find('span.project-title').text("<%= @project.title %>");
-proj.find("div.flatpickr a.input-button").attr("title", "<%= @project.deadline.strftime("Deadline is: %B %d, %Y")  if @project.deadline %>");
-
+proj.find("div.flatpickr a.input-button").attr("title", "<%= @project.deadline ? @project.deadline.strftime("Deadline is: %B %d, %Y") : "Set deadline" %>");
