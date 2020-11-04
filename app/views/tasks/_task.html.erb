@@ -6,27 +6,34 @@
 	  </div>
 
 		<div class="border-right col p-3 task-text <%= "text-decor-line" if task.completed? %>">
-			<span><%=task.title%></span>    
+			<span><%=task.title%></span>
+			<div class="col-auto fa-buttons flatpickr">
+        <%= form_with model: [project, task], class: "test-pickr" do |form| %>
+          <%= form.text_field :task_deadline, class: "d-none",data: {input: ""} %>
+          <a class="input-button" title="<%= task.task_deadline ? task.task_deadline.strftime("Deadline is: %B %d, %Y") : "Set deadline" %>" data-toggle>
+            <i class="fa fa-calendar " ></i>
+          </a>
+        <% end %>
+      </div>  
 		</div>
 
-				
-		    <div class="px-1 py-3 text-center col-auto fa-buttons <%= "d-none" if task.completed? %>">
-		      <a href="#" class="px-2">
-		        <i class="fa fa-unsorted" style="font-size:16px;color:#747474;"></i>
-		      </a>
-		
-		      <span>|</span>
-		
-		      <%= link_to edit_project_task_path(project,task),data:{remote:true}, class:"px-2" do %>
-		        <i class="fa fa-pencil" style="font-size:16px;color:#747474;"></i>
-		      <% end %>
-		
-		      <span>|</span>
-		
-		      <%= link_to project_task_path(project,task), method: :delete, data: { remote: true, confirm: 'Are you sure?'}, class: "delete-task px-2" do %>
-		        <i class="fa fa-trash" style="font-size:16px;color:#747474;"></i>
-		      <% end %>
-				</div>
+			<div class="px-1 py-3 text-center col-auto fa-buttons <%= "d-none" if task.completed? %>">
+	      <a href="#" class="px-2">
+	        <i class="fa fa-unsorted" style="color:#747474;"></i>
+	      </a>
+	
+	      <span>|</span>
+	
+	      <%= link_to edit_project_task_path(project,task),data:{remote:true}, class:"px-2" do %>
+	        <i class="fa fa-pencil" style="color:#747474;"></i>
+	      <% end %>
+	
+	      <span>|</span>
+	
+	      <%= link_to project_task_path(project,task), method: :delete, data: { remote: true, confirm: 'Are you sure?'}, class: "delete-task px-2" do %>
+	        <i class="fa fa-trash" style="color:#747474;"></i>
+	      <% end %>
+			</div>
 		</div>
 </li>
   
