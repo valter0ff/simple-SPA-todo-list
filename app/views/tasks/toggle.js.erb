@@ -4,6 +4,7 @@
 		.next().addClass("d-none");
 		
 	$('#<%=dom_id(@task)%>').addClass("light-blue");
+	$('#<%=dom_id(@task)%> div.flatpickr').addClass("d-none");
 	
 <% else %>
 
@@ -11,5 +12,6 @@
 	.next().removeClass("d-none");
 	
 	$('#<%=dom_id(@task)%>').removeClass("light-blue");
-	
+	$('#<%=dom_id(@task)%> div.flatpickr').removeClass("d-none");
+
 <% end %>

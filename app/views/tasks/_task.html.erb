@@ -7,7 +7,7 @@
 
 		<div class="border-right col p-3 task-text <%= "text-decor-line" if task.completed? %>">
 			<span><%=task.title%></span>
-			<div class="col-auto fa-buttons flatpickr">
+			<div class="col-auto fa-buttons flatpickr <%= "d-none" if task.completed? %>">
         <%= form_with model: [project, task], class: "test-pickr" do |form| %>
           <%= form.text_field :task_deadline, class: "d-none",data: {input: ""} %>
           <a class="input-button" title="<%= task.task_deadline ? task.task_deadline.strftime("Deadline is: %B %d, %Y") : "Set deadline" %>" data-toggle>

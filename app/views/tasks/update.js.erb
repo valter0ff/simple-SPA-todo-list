@@ -1,3 +1,4 @@
 $('#<%=dom_id(@task)%>').parent().replaceWith("<%= j render "tasks/task", project:@project ,task:@task %>");
 railsSort();
 roundEdges();
+configuredFlatpickr();
