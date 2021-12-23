@@ -15,14 +15,16 @@
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
-        <%= f.password_field :password, pattern: "^.{6,}$",
+        <%= f.password_field :password,
+        pattern: "^.{6,}$", required: true,
         title: "minimum password length is 6 characters",
         class: "form-control", autocomplete: "new-password" %>
       </div>
 
       <div class="form-group">
         <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, pattern: "^.{6,}$",
+        <%= f.password_field :password_confirmation,
+        pattern: "^.{6,}$", required: true,
         title: "minimum password length is 6 characters",
         class: "form-control", autocomplete: "new-password" %>
       </div>
