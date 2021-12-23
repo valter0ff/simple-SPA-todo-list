@@ -1,10 +1,10 @@
-  <ul class="shadow list-group mb-5 border-bottom border-secondary rounded-bottom" id="<%=dom_id(project)%>">
+<ul class="shadow list-group mb-5 border-bottom border-secondary rounded-bottom" id="<%=dom_id(project)%>">
   <li class="list-group-item p-0 blue-gradient">
     <div class="row mx-0">
       <div class="col-auto m-1 px-2 pt-2 flatpickr">
         <%= form_with model: project, class: "test-pickr" do |form| %>
           <%= form.text_field :deadline, class: "d-none",data: {input: ""} %>
-          <a class="input-button" title="<%= project.deadline ? project.deadline.strftime("Deadline is: %B %d, %Y") : "Set deadline" %>" data-toggle>
+          <a class="input-button" title="<%= project_deadline(project) %>" data-toggle>
             <i class="fa fa-calendar fa-white-shadow fa-dark-style" ></i>
           </a>
         <% end %>
@@ -24,27 +24,25 @@
     </div>
   </li>
 
-  <% if project %>
-      <%= form_with model: [project,@task], id: "new_task_form" do |task| %>
-        <li class="d-flex list-group-item light p-0 light-grey new-task rounded-0" >
-          <div class="m-1 pt-2 px-1">
-            <a><i class="fa fa-plus fa-green-style" ></i></a>
+  <%= form_with model: [project, @task], class: 'new_task' do |task| %>
+    <li class="d-flex list-group-item light p-0 light-grey new-task rounded-0" >
+      <div class="m-1 pt-2 px-1">
+        <a><i class="fa fa-plus fa-green-style" ></i></a>
+      </div>
+      <div class=" input-group ">
+        <%= task.text_field :title,
+        placeholder: "Start typing here to create a task..." , required: true,
+        class:"form-control my-2 border-left-0 border-bottom-0 border-secondary"%>
+          <div class="input-group-append">
+              <%= task.submit "Add task", class:"btn my-2 mr-2 px-3 text-white font-weight-bold border-top border-secondary green-gradient text-dark-shadow" %>
           </div>
-          <div class=" input-group ">
-            <%= task.text_field :title, placeholder: "Start typing here to create a task..." , class:"form-control my-2 border-left-0 border-bottom-0 border-secondary"%>
-              <div class="input-group-append">
-                  <%= task.submit "Add task", class:"btn my-2 mr-2 px-3 text-white font-weight-bold border-top border-secondary green-gradient text-dark-shadow" %>
-       
-              </div>
-          </div>
-        </li>
-    <% end %>
-    <div class="sortable">
+      </div>
+    </li>
+  <% end %>
+  <div class="sortable">
     <% project.tasks.each do |task| %>
         <%= render partial: 'tasks/task', locals: { project: project, task: task} %>
     <% end %>
-    </div>
-  <% end %>
-
+  </div>
 </ul>
 

@@ -1,3 +1,1 @@
-
-$("#modal-window").find(".modal-content").html("<%= j render 'form', project: @project %>");
-$("#modal-window").modal('show');
+$("#modal-window").modal('show').find(".modal-content").html("<%= j render 'form', project: @project %>");
