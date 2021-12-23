@@ -2,13 +2,13 @@
 //# All this logic will automatically be available in application.js.
 //# You can use CoffeeScript in this file: http://coffeescript.org/
 
-
 function roundEdges(){
-	$("ul>div>li:last-child").addClass("rounded-bottom").children().addClass("rounded-bottom")
+	$("ul>div>li:last-child").addClass("rounded-bottom").children().addClass("rounded-bottom");
+  $('[id^="task_form_project"] > li').addClass("rounded-bottom");
 };
 
 function squareEdges(){
-			$("ul>div>li").removeClass("rounded-bottom").children().removeClass("rounded-bottom");
+  $("ul>div>li").removeClass("rounded-bottom").children().removeClass("rounded-bottom");
 };
 
 function railsSort(){
@@ -19,8 +19,10 @@ function railsSort(){
 			roundEdges();
 		}
 	});
-	
+
 };
 
-$(document).ready(railsSort);
-$(document).ready(roundEdges);
+$( document ).on('turbolinks:load', function() {
+  roundEdges();
+  railsSort();
+})
