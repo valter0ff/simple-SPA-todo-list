@@ -4,10 +4,11 @@
 			<a><i class="fa fa-pencil-square-o fa-green-style" ></i></a>
 		</div>
 		<div class=" input-group ">
-			<%= form.text_field :title, class:"form-control my-2 border-left-0 border-bottom-0 border-secondary"%>
+			<%= form.text_field :title, required: true,
+        class:"form-control my-2 border-left-0 border-bottom-0 border-secondary"%>
 				<div class="input-group-append">
 						<%= form.submit "Edit task", class:"btn my-2 mr-2 px-3 text-white font-weight-bold border-top border-secondary green-gradient text-dark-shadow" %>
- 
+
 				</div>
 		</div>
 	</li>

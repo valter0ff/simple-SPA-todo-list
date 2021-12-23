@@ -1,1 +1,1 @@
-$('#<%=dom_id(@task)%>').parent().replaceWith("<%= j render "tasks/edit_task", project:@project ,task:@task %>");
+$('#<%=dom_id(@task)%>').parent().replaceWith("<%= j render 'tasks/edit_task', project: @project , task: @task %>");

@@ -1,17 +1,11 @@
 <% if @task.completed? %>
-
-	$('#<%=dom_id(@task)%> div.task-text').addClass("text-decor-line")
-		.next().addClass("d-none");
-		
-	$('#<%=dom_id(@task)%>').addClass("light-blue");
-	$('#<%=dom_id(@task)%> div.flatpickr').addClass("d-none");
-	
+  $('#<%=dom_id(@task)%>').addClass("light-blue")
+    .find('div.task-text').addClass("text-decor-line")
+    .find('div.flatpickr').addClass("d-none");
 <% else %>
-
-	$('#<%=dom_id(@task)%> div.task-text').removeClass("text-decor-line")
-	.next().removeClass("d-none");
-	
-	$('#<%=dom_id(@task)%>').removeClass("light-blue");
-	$('#<%=dom_id(@task)%> div.flatpickr').removeClass("d-none");
-
+  $('#<%=dom_id(@task)%>').removeClass("light-blue")
+    .find('div.task-text').removeClass("text-decor-line")
+    .find('div.flatpickr').removeClass("d-none");
 <% end %>
+
+configuredFlatpickr();
