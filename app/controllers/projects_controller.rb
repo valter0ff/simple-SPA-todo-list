@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_project, only: [:edit, :update, :destroy]
+  before_action :set_project, only: %i[edit update destroy]
 
   def index
     @projects = current_user.projects
@@ -11,15 +13,14 @@ class ProjectsController < ApplicationController
     @project = current_user.projects.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @project = current_user.projects.new(project_params)
-		@task = Task.new
+    @task = Task.new
     respond_to do |format|
       if @project.save
-      	format.js
+        format.js
       else
         format.js { render 'new' }
       end
@@ -29,7 +30,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-				format.js
+        format.js
       else
         format.js { render 'edit' }
       end

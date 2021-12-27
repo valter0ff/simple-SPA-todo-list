@@ -1,29 +1,30 @@
+# frozen_string_literal: true
+
 class TasksController < ApplicationController
-  before_action :set_task, except: [:index, :new, :create ]
-	before_action :set_project, except: [:index, :destroy]
+  before_action :set_task, except: %i[index new create]
+  before_action :set_project, except: %i[index destroy]
 
   def index
     @tasks = Task.order(:position).all
   end
 
   def toggle
-    @task.toggle_completed!
+    @task.toggle(:completed).save
   end
 
   def new
     @task = Task.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @task = @project.tasks.new(task_params)
     respond_to do |format|
       if @task.save
-				format.js
+        format.js
       else
-        format.js {render :new}
+        format.js { render :new }
       end
     end
   end
@@ -33,7 +34,7 @@ class TasksController < ApplicationController
       if @task.update(task_params)
         format.js
       else
-        format.js {render :edit}
+        format.js { render :edit }
       end
     end
   end
@@ -57,4 +58,3 @@ class TasksController < ApplicationController
     params.require(:task).permit(:title, :task_deadline)
   end
 end
-
