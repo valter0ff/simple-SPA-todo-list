@@ -49,7 +49,7 @@
 	color:#747474;
 	visibility: hidden;
 }
- 
+
 li div[id^="task_"]:hover:not(.light-blue){
 	background-color: #FCFED5;
 }
@@ -91,4 +91,14 @@ a.input-button {
 
 .flatpickr-wrapper{
 	float: right;
+}
+
+.truncate-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.task-text {
+  min-width: 0;
 }

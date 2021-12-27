@@ -5,9 +5,9 @@
 	    <%= check_box_tag "", 1, task.completed?, data: { remote: true, url: toggle_project_task_path(project, task), method: :post } %>
 	  </div>
 
-		<div class="border-right col p-3 task-text <%= "text-decor-line" if task.completed? %>">
-			<span><%=task.title%></span>
-			<div class="col-auto fa-buttons flatpickr <%= "d-none" if task.completed? %>">
+		<div class="border-right col p-3 d-flex task-text <%= "text-decor-line" if task.completed? %>">
+			<span class="truncate-text"><%=task.title%></span>
+			<div class="col-auto fa-buttons flatpickr pl-2 pr-0 <%= "d-none" if task.completed? %>">
         <%= form_with model: [project, task], class: "test-pickr" do |form| %>
           <%= form.text_field :task_deadline, class: "d-none",data: {input: ""} %>
           <a class="input-button" title="<%= task_deadline(task) %>" data-toggle>

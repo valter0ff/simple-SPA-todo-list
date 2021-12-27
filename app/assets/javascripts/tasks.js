@@ -25,4 +25,7 @@ function railsSort(){
 $( document ).on('turbolinks:load', function() {
   roundEdges();
   railsSort();
+  $('.task-text').children('span').click(function(){
+  $(this).toggleClass('truncate-text');
+  });
 })
